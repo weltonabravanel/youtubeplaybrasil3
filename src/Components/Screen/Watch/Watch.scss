@@ -1,0 +1,113 @@
+.sidebar.small.watch-nav {
+    display: none;
+}
+
+.app_main.watch-app {
+    width: 100% !important;
+    overflow: visible;
+    padding: 24px 33px;
+    padding-bottom: 11px;
+
+    .category-manage {
+        display: none;
+    }
+
+    &>.row {
+        margin: 0;
+
+        &>*.col>* {
+            height: fit-content;
+        }
+
+        &>*.col:first-child {
+            padding-left: 0;
+        }
+
+        &>*.col:last-child {
+            padding-right: 0;
+        }
+    }
+
+    @media(max-width: 1024px) {
+        &>.row {
+            &>*.col {
+                width: 100%;
+                padding: 0;
+            }
+
+            &>*.col:last-child {
+                margin-top: 23px;
+            }
+        }
+    }
+
+    @media(max-width: 660px) {
+        & {
+            padding: 0 16px;
+        }
+    }
+
+    @media(max-width: 512px) {
+        & {
+            padding: 0 11px;
+            padding-top: 0;
+
+            .watch-screen-player {
+                margin: 0 -11px;
+                width: calc(100% + 22px);
+                padding-bottom: calc(56.25% + 12.375px);
+            }
+        }
+    }
+}
+
+.watch-screen-player {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: black;
+    }
+}
+
+.categoriesBar.watch-category-bar {
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    align-items: flex-start;
+
+    &>*:first-child {
+        padding-top: 0;
+    }
+
+    @media (max-width: 1024px) {
+        & {
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            align-items: unset;
+            margin-bottom: 11px;
+            padding: 0;
+        }
+        &>*:first-child {
+            padding: 0.5rem 0;
+        }
+    }
+}
